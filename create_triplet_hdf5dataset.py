@@ -69,7 +69,7 @@ negative = np.vstack(iv_negative)
 
 
 # Create the HDF5 file
-with h5py.File('~larcher/expe/triplet_ranking/sre04050608SWB_dataset_norm.hdf5', mode='w') as f:
+with h5py.File('/lium/parolee/larcher/expe/triplet_ranking/sre04050608SWB_dataset_norm.hdf5', mode='w') as f:
     
     # Store example
     iv_ex = f.create_dataset("iv_example", data=example.astype('float32'))

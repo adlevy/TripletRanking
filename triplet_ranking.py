@@ -572,8 +572,8 @@ def main():
     distance_fn= get_distances_fn(triplet_model)
     #
     log.info("Load training data")
-    train_set = H5PYDataset('~larcher/expe/triplet_ranking/sre04050608SWB_dataset_norm.hdf5', which_sets=('train',))
-    validation_set = H5PYDataset('~larcher/expe/triplet_ranking/sre04050608SWB_dataset_norm.hdf5', which_sets=('validation',))
+    train_set = H5PYDataset('/lium/parolee/larcher/expe/triplet_ranking/sre04050608SWB_dataset_norm.hdf5', which_sets=('train',))
+    validation_set = H5PYDataset('/lium/parolee/larcher/expe/triplet_ranking/sre04050608SWB_dataset_norm.hdf5', which_sets=('validation',))
     log.info("Start training")
     triplet_training(triplet_model, distance_fn, momentum_train, test_fn, train_set, validation_set, n_epochs=10000, model_name='mlp_momentum')
 
