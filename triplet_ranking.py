@@ -24,7 +24,7 @@ import theano.tensor as T
 import fuel
 from fuel.datasets.hdf5 import H5PYDataset
 from fuel.schemes import ShuffledScheme, ConstantScheme
-from fuel.transformers import Mapping, Batch, Padding, Filter, Unpack, AddContext, StackAndShuffle, Cache, ScaleAndShift
+from fuel.transformers import Mapping, Batch, Padding, Filter, Unpack, StackAndShuffle, Cache, ScaleAndShift
 from fuel.streams import DataStream
 
 #import blocks
