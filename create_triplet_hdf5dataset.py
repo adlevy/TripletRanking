@@ -11,7 +11,7 @@ from collections import OrderedDict
 from fuel.datasets import IndexableDataset
 from fuel.schemes import (SequentialScheme, ShuffledScheme, SequentialExampleScheme, ShuffledExampleScheme)
 from fuel.schemes import ConstantScheme
-from fuel.transformers import Mapping, Batch, Padding, Filter, Unpack,  StackAndShuffle, Cache
+from fuel.transformers import Mapping, Batch, Padding, Filter, Unpack
 from fuel.streams import DataStream
 
 import sympy
