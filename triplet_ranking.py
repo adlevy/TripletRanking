@@ -484,7 +484,7 @@ def triplet_training(triplet_model, distance_fn,
 
                     validation_losses.append(test_model(minibatch_example, minibatch_positive, minibatch_negative))
 
-                    distances= distance_fntu(minibatch_example, minibatch_positive, minibatch_negative)
+                    distances= distance_fn(minibatch_example, minibatch_positive, minibatch_negative)
 
                     distancespositives.append(numpy.sum(distances[0]))
                     # distancesnegatives.append(numpy.sum(distances[1] * loss_rank)/numpy.sum(loss_rank))
