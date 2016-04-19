@@ -55,6 +55,9 @@ def add(x,y):
     return x+y
 
 
+def testcalcul(x,y):# test gentil de ma part
+    return T.pow(x,2)-T.pow(y,2)
+
 def _squared_magnitude(x):
     return T.sqr(x).sum(axis=-1)
 
@@ -481,7 +484,7 @@ def triplet_training(triplet_model, distance_fn,
 
                     validation_losses.append(test_model(minibatch_example, minibatch_positive, minibatch_negative))
 
-                    distances= distance_fn(minibatch_example, minibatch_positive, minibatch_negative)
+                    distances= distance_fntu(minibatch_example, minibatch_positive, minibatch_negative)
 
                     distancespositives.append(numpy.sum(distances[0]))
                     # distancesnegatives.append(numpy.sum(distances[1] * loss_rank)/numpy.sum(loss_rank))
@@ -572,8 +575,8 @@ def main():
     distance_fn= get_distances_fn(triplet_model)
     #
     log.info("Load training data")
-    train_set = H5PYDataset('/lium/parolee/larcher/expe/triplet_ranking/sre04050608SWB_dataset_norm.hdf5', which_sets=('train',))
-    validation_set = H5PYDataset('/lium/parolee/larcher/expe/triplet_ranking/sre04050608SWB_dataset_norm.hdf5', which_sets=('validation',))
+    train_set = H5PYDataset('../data/sre04050608SWB_dataset_norm.hdf5', which_sets=('train',))
+    validation_set = H5PYDataset('../data/sre04050608SWB_dataset_norm.hdf5', which_sets=('validation',))
     log.info("Start training")
     triplet_training(triplet_model, distance_fn, momentum_train, test_fn, train_set, validation_set, n_epochs=10000, model_name='mlp_momentum')
 
